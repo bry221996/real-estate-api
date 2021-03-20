@@ -7,7 +7,8 @@ RUN apt-get update \
         zlib1g-dev \
         libpng-dev \
         libjpeg-dev \
-    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
+    && curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer \
+    && composer self-update
 
 RUN docker-php-ext-configure mysqli --with-mysqli=mysqlnd \
     && docker-php-ext-configure gd --with-png-dir=/usr --with-jpeg-dir=/usr \
