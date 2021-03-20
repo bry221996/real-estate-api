@@ -1,0 +1,3 @@
+[mysqld]
+default_authentication_plugin=mysql_native_password
+innodb_flush_log_at_trx_commit = 2
